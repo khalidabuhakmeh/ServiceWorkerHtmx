@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <span id="count">0</span>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-center">
+                <button
+                    hx-get="/count"
+                    hx-target="#count"
+                    type="button" class="btn btn-outline-primary">
+                    Count
+                </button>
+                <button
+                    hx-delete="/reset"
+                    hx-target="#count"
+                    hx-confirm="Are you sure you want to reset?"
+                    type="button"
+                    class="btn btn-outline-danger">
+                    Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
